@@ -14,4 +14,11 @@ function TransactionForm({ addTransaction }) {
         category,
         amount: parseFloat(amount), // Convert amount to a number
       };
+      addTransaction(newTransaction);
+
+    setDate('');
+    setDescription('');
+    setCategory('');
+    setAmount('');
+  };
 }
