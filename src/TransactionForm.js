@@ -5,4 +5,7 @@ function TransactionForm({ addTransaction }) {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('');
+//events handler
+  const handleSubmit = (e) => {
+    e.preventDefault();
 }
