@@ -1,9 +1,14 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
-import TransactionTable from "./TransactionTable";
+import TransactionForm from './TransactionForm';
+import TransactionTable from './TransactionTable';
+
 
 function App() {
-  const [transactions, setTransactions] = useState([]); // Declare and initialize state variable
+  const [transactions, setTransactions] = useState([]);
+  const addTransaction = (newTransaction) => {
+    setTransactions((prevTransactions) => [...prevTransactions, newTransaction]);
+  };// Declare and initialize state variable
 
   useEffect(() => {
     fetch("http://localhost:3000/transactions")
@@ -13,7 +18,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* Display the fetched data */}
+      <TransactionForm addTransaction={addTransaction} />
+      <TransactionTable transactions={transactions} />
       <div>
         <h2>Transactions</h2>
         <ul>
