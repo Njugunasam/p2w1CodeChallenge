@@ -2,9 +2,11 @@ import './App.css';
 import React, { useState, useEffect } from "react";
 import TransactionForm from './TransactionForm';
 import TransactionTable from './TransactionTable';
+import SearchBar from './SearchBar';
 
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState('');
   const [transactions, setTransactions] = useState([]);
   const addTransaction = (newTransaction) => {
     setTransactions((prevTransactions) => [...prevTransactions, newTransaction]);
@@ -18,6 +20,7 @@ function App() {
 
   return (
     <div className="App">
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <TransactionForm addTransaction={addTransaction} />
       <TransactionTable transactions={transactions} />
       <div>
