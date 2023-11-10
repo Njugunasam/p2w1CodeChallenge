@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
+import TransactionTable from "./TransactionTable";
 
 function App() {
   const [transactions, setTransactions] = useState([]); // Declare and initialize state variable
@@ -22,6 +23,7 @@ function App() {
               <p>Category: {transaction.category}</p>
               <p>Date: {transaction.date}</p>
               <p>Amount: {transaction.amount}</p>
+              <TransactionTable />
             </li>
           ))}
         </ul>
