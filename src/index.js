@@ -6,6 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import './App.css';
 import React, { useState, useEffect } from "react";
 
+function App() {
+  const [transactions, setTransactions] = useState([]);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
