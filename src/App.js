@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from "react";
 
 function App() {
+  const [transactions, setTransactions] = useState([]); // Declare and initialize state variable
+
+  useEffect(() => {
+    fetch("http://localhost:3000/transactions")
+      .then(response => response.json())
+      .then(data => setTransactions(data)); // Set the fetched data to the state variable
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Display the fetched data */}
+      <div>
+        <h2>Transactions</h2>
+        <ul>
+          {transactions.map(transaction => (
+            <li key={transaction.id}>
+              <p>Description: {transaction.description}</p>
+              <p>Category: {transaction.category}</p>
+              <p>Date: {transaction.date}</p>
+              <p>Amount: {transaction.amount}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
