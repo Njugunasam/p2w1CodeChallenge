@@ -8,4 +8,10 @@ function TransactionForm({ addTransaction }) {
 //events handler
   const handleSubmit = (e) => {
     e.preventDefault();
+    const newTransaction = {
+        date,
+        description,
+        category,
+        amount: parseFloat(amount), // Convert amount to a number
+      };
 }
