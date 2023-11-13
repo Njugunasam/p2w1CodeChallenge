@@ -1,0 +1,26 @@
+.transaction-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+  
+  .label {
+    font-weight: bold;
+    width: 100px;
+  }
+  
+  .value {
+    flex-grow: 1;
+  }
+  
