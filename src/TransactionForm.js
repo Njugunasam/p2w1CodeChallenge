@@ -53,4 +53,3 @@ function TransactionForm({ addTransaction }) {
 }
 
 export default TransactionForm;
-

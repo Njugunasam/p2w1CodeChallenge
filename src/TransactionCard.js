@@ -1,5 +1,5 @@
 import React from 'react';
-import './TransactionCard.css'; 
+import './TransactionCard.css';
 
 function TransactionCard({ transaction }) {
   return (
